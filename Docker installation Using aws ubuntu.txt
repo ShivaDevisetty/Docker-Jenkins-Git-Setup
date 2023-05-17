@@ -1,0 +1,10 @@
+Docker installtion in Git Bash/ AWS Ubuntu server
+
+https://get.docker.com/
+
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+
+$ sh get-docker.sh
+
+$ docker --version
+Docker version 24.0.0, build 98fdcd7
