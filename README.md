@@ -5,14 +5,14 @@ Docker notes and installation on ubuntu
 Git Notes
 
 # Jenkins setup Master-Slave
-Setup Jenkins using Docker
-Authentication/Authorization Users
-Pipeline Creation and Integrate with Github Repository
-Slave Nodes to Jenkins Master
-Setup Email Notification in Jenkins
-Setup Postman using newman CLI in Node
-Publishing Artifacts to S3
-Storing Credentials (Using Jenkins Credentials and Ansible-Vault)
+1.Setup Jenkins using Docker
+2.Authentication/Authorization Users
+3.Pipeline Creation and Integrate with Github Repository
+4.Slave Nodes to Jenkins Master
+5.Setup Email Notification in Jenkins
+6.Setup Postman using newman CLI in Node
+7.Publishing Artifacts to S3
+8.Storing Credentials (Using Jenkins Credentials and Ansible-Vault)
 
 
   
