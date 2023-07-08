@@ -1,1 +1,70 @@
 https://www.linkedin.com/pulse/jenkins-masterslave-setup-prayag-sangode/
+
+
+
+Jenkins Master/Slave Setup
+In this article we will learn how to setup Devops tool Jenkins in master/slave mode.
+ 
+Prerequisites
+Launch an EC2 Linux instance to host Jenkins. Make sure to add Custom TCP port: 8080 in AWS Security Groups inbound rule.
+Master Node: t3.small/ t3.large
+Slave Node: t2.micro
+1.	Install Jenkins on master node. 
+2.	Install Java on master node with same version.
+Step1: Go to slave node Instance.
+[ec2-user@ip-172-31-85-255 ~]$ sudo su –
+[root@ip-172-31-85-255 ~]# adduser myslave
+[root@ip-172-31-85-255 ~]# su – myslave
+[myslave@ip-172-31-85-255 ~]$]
+Now Generate keys for this user
+[myslave@ip-172-31-85-255 ~]$ ssh-keygen -t rsa
+[myslave@ip-172-31-85-255 ~]$ cd .ssh
+[myslave@ip-172-31-85-255 .ssh]$ ls
+id_rsa  id_rsa.pub
+Share the public key (id_rsa.pub) to the master node then they both will communicate.
+[myslave@ip-172-31-85-255 .ssh]$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAAJLg0rqhDYhbQ2fuLnXSc0gcGZn95IXQjbXhw2Ch30Tdpd4n8VgPY/jQXjb3AWKLMP2AlbXH9S0EqFqyPuxtQS7tj2t/cLs4yEAf5TihTd3bu0iFkIALp2ESqcBE7HKjrzb3hj4lwVOINulrByKD/1MEitRpjZrvUMLDEVKM2ApyYVOkGmeyRxf3Gbn9T6GxDJZni3MV9z+jqd3NL+3qcA2NG3hww3nF1Nr7lt1nFilTVjjqb2gO77RPLldeQMit9EZWDsU5jyQav9tsI5sb6I78b7P90ldUilTm7VWibxq41bsKGkcnnbjyPJiZvYXt4TKGY8YCQhSBzMN7TYpoGNNZj3PMnn+xqogkj61PC9JRfx+eDLIUs28+JDHI3aBD1xbaxb9jts2q4GdiNTOAr2hirDx1v/x6gQNzZigjln6eOtXKp/p9G6jE3mQ17/Oo+RX6vw/jRR5CV+Q2/A/HOXJikMv3CJwVntgvoCS2FKaEq6+L3ReTDG8Ng70INus= myslave@ip-172-31-85-255.ec2.internal
+[myslave@ip-172-31-85-255 .ssh]$ cat id_rsa.pub > authorized_keys
+[myslave@ip-172-31-85-255 .ssh]$ ls
+authorized_keys  id_rsa  id_rsa.pub
+[myslave@ip-172-31-85-255 .ssh]$ cat authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAAJLg0rqhDYhbQ2fuLnXSc0gcGZn95IXQjbXhw2Ch30Tdpd4n8VgPY/jQXjb3AWKLMP2AlbXH9S0EqFqyPuxtQS7tj2t/cLs4yEAf5TihTd3bu0iFkIALp2ESqcBE7HKjrzb3hj4lwVOINulrByKD/1MEitRpjZrvUMLDEVKM2ApyYVOkGmeyRxf3Gbn9T6GxDJZni3MV9z+jqd3NL+3qcA2NG3hww3nF1Nr7lt1nFilTVjjqb2gO77RPLldeQMit9EZWDsU5jyQav9tsI5sb6I78b7P90ldUilTm7VWibxq41bsKGkcnnbjyPJiZvYXt4TKGY8YCQhSBzMN7TYpoGNNZj3PMnn+xqogkj61PC9JRfx+eDLIUs28+JDHI3aBD1xbaxb9jts2q4GdiNTOAr2hirDx1v/x6gQNzZigjln6eOtXKp/p9G6jE3mQ17/Oo+RX6vw/jRR5CV+Q2/A/HOXJikMv3CJwVntgvoCS2FKaEq6+L3ReTDG8Ng70INus= myslave@ip-172-31-85-255.ec2.internal
+[myslave@ip-172-31-85-255 .ssh]$ chmod 700 authorized_keys
+Next go to master node
+Jenkins Runs /var/lib/Jenkins there is no .ssh directory go and create .ssh directory in master node.
+[root@ip-172-31-85-211 ~]# mkdir .ssh
+drwx-------.  2 root root  29 Jul  7 15:16 .ssh
+change ownership to jenkins: jenkins.
+drwxr-xr-x.   2 jenkins jenkins     6 Jul  8 17:38 .ssh
+[root@ip-172-31-85-211 jenkins]# echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAAJLg0rqhDYhbQ2fuLnXSc0gcGZn95IXQjbXhw2Ch30Tdpd4n8VgPY/jQXjb3AWKLMP2AlbXH9S0EqFqyPuxtQS7tj2t/cLs4yEAf5TihTd3bu0iFkIALp2ESqcBE7HKjrzb3hj4lwVOINulrByKD/1MEitRpjZrvUMLDEVKM2ApyYVOkGmeyRxf3Gbn9T6GxDJZni3MV9z+jqd3NL+3qcA2NG3hww3nF1Nr7lt1nFilTVjjqb2gO77RPLldeQMit9EZWDsU5jyQav9tsI5sb6I78b7P90ldUilTm7VWibxq41bsKGkcnnbjyPJiZvYXt4TKGY8YCQhSBzMN7TYpoGNNZj3PMnn+xqogkj61PC9JRfx+eDLIUs28+JDHI3aBD1xbaxb9jts2q4GdiNTOAr2hirDx1v/x6gQNzZigjln6eOtXKp/p9G6jE3mQ17/Oo+RX6vw/jRR5CV+Q2/A/HOXJikMv3CJwVntgvoCS2FKaEq6+L3ReTDG8Ng70INus= myslave@ip-172-31-85-255.ec2.internal" > /var/lib/jenkins/.ssh/known_hosts
+[root@ip-172-31-85-211 .ssh]# chown jenkins:jenkins .ssh
+[root@ip-172-31-85-211 .ssh]# ls -la
+total 24
+drwxr-xr-x.  3 jenkins jenkins    55 Jul  8 18:08 .
+drwxr-xr-x. 22 jenkins jenkins 16384 Jul  8 17:52 ..
+drwxr-xr-x.  2 jenkins jenkins     6 Jul  8 18:08 .ssh
+-rw-r--r--.  1 root    root      364 Jul  8 17:48 known_host
+-rw-r--r--.  1 root    root      592 Jul  8 18:03 known_hosts
+[root@ip-172-31-85-211 .ssh]# chown jenkins:jenkins known_hosts
+[root@ip-172-31-85-211 .ssh]# ls -la
+total 24
+drwxr-xr-x.  3 jenkins jenkins    55 Jul  8 18:08 .
+drwxr-xr-x. 22 jenkins jenkins 16384 Jul  8 17:52 ..
+drwxr-xr-x.  2 jenkins jenkins     6 Jul  8 18:08 .ssh
+-rw-r--r--.  1 root    root      364 Jul  8 17:48 known_host
+-rw-r--r--.  1 jenkins jenkins   592 Jul  8 18:03 known_hosts
+[root@ip-172-31-85-211 .ssh]# chown jenkins:jenkins known_host
+[root@ip-172-31-85-211 .ssh]# ls -la
+total 24
+drwxr-xr-x.  3 jenkins jenkins    55 Jul  8 18:08 .
+drwxr-xr-x. 22 jenkins jenkins 16384 Jul  8 17:52 ..
+drwxr-xr-x.  2 jenkins jenkins     6 Jul  8 18:08 .ssh
+-rw-r--r--.  1 jenkins jenkins   364 Jul  8 17:48 known_host
+-rw-r--r--.  1 jenkins jenkins   592 Jul  8 18:03 known_hosts
+[root@ip-172-31-85-211 .ssh]# ssh-keyscan -H 172.31.85.255 >>/var/lib/jenkins/.ssh/known_hosts
+# 172.31.85.255:22 SSH-2.0-OpenSSH_8.7
+# 172.31.85.255:22 SSH-2.0-OpenSSH_8.7
+# 172.31.85.255:22 SSH-2.0-OpenSSH_8.7
+# 172.31.85.255:22 SSH-2.0-OpenSSH_8.7
+# 172.31.85.255:22 SSH-2.0-OpenSSH_8.7
+
