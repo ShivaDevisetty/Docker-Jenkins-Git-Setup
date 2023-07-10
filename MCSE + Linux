@@ -1,0 +1,340 @@
+Class : 1
+MCSE - Microsoft Certified System Engineer
+previously called as MCITP Mircosoft certified IT Professional
+at that time we used 2008 Server OS - but it is outdated now
+Currently we are using 2012 server OS  and 2016 server OS
+By Completing the course we can become Mircosoft System Administrator
+This is Hardware related course
+software admin - Java, C++, Python Etc.
+Hardware - MCSE, Linux - Hardware IT Professional
+IT Jobs - Level Wise :
+1. Desktop Admin - Learn Basic Course - Hardware and Networking
+Activities :
+Arrange all the machines
+Plug the machine
+Check the OS working or not
+Printer connecting
+Mouse, Keyboard issues and replacement
+
+2. System Admin :
+Do the course - MSCE 
+
+Day to Day Activities :
+maintain Network
+Deploying & Managing server
+Manager Client server
+Manage user accounts and password
+User permissions
+manage user profiles
+Group Policies - setting time for users when they want to login or logout.
+manage web servers
+managing the FTP servers
+
+3. Network Admin :
+
+System admin can do the work for Network admin work and do the courses like CCNA and CCNP
+manage the routers and switches.
+how to configure the router from one branch to another branch so as to get the data easily available to user.
+
+Security Admin - there are courses like CCSP - Cybersecurity professional course using ethical hacking.
+Any hacker is attacking our network - he or she need to protect it from hackers
+On premises :
+managing the server and desinging it according to our private network within the network.
+Now a days companies are moving to cloud technology and saving all the data in cloud
+cloud courses like Azure, AWS, GCP - Triple the salaries of System admin 
+Devops - Dev + Ops
+Dev - MCSE, CCNA, CCNP
+Ops - to make it easy for end user - course to do is Java, Python etc
+Troubleshooting - wherever we have problems and network stuck sometimes - at that time we will solve the issues.
+
+Features of Windows Server 2012 
+64 Bit OS
+Easy Installation
+Bit - 0 and 1 - our processor is designed on two tech - 32bit and 64bit
+X86 - 32 Bit
+X64 - 64 Bit - it is faster
+All the softwares are designed in 32 bit and 64 bit
+64 bit should be there for 2012 & 2016 installation server
+OS supports Cloud Infrastructure  - how to move to on premise that means data to cloud
+Improve server manager :
+it is dashboard - used for activate the services - deactivate the services - control the OS
+Customized Dashboard - it will show the services which are active and inactive
+Remote Management of Server core and full - services offered to user without going to user place
+manage or remove the services remotely
+MS OS - 90% of companies using MS OS 
+MSCE importance - it supports all the softwares and applications so it is compantible.
+it is GUI as well as user friendly
+GUI - full installion - with apps
+Server core - command based system - only CMD will be avaialable in Server core OS
+all the desktop icons are available in GUI OS
+Active Directory :
+we can create the Domain model
+we can design our own server
+ server / Adc/ Client /user accounts etc
+we can create child domain controller - CDC
+Admin center & Recycle bin - if user accounts are deleted then we can recover from recycle bin
+Domain services - desing the server like Member server
+Federation services and light weight directory services
+certificate services and rights management services - giving authentication for particular servers
+Inbuilt GPMC :
+dont allow the users to change the desktop wallpaper or deny the permission for USB devices so to not copy the data
+GPMC - Group Policy Management Console
+Centralized deployment of apps - restrict the user to install the apps in system but can download them .
+while we work on server we can install the apps on user system or push from backend like system updates
+Disk Quota :
+Storage limit for users to save the data , it differs according to the client availability
+Distributed File System :
+By giving one name , a user can access to multiple share drives
+Windows server backup :
+to backup the drive or data which are required to restore the deleted files
+DNS Dependency :
+with the help of DNS , we can assign the name for the server so as to get the access to certain servers like
+attending the class by cisco
+we can see servers like HTTP, HTTPS, FTP .
+Improved Virtualization services :
+it means when we use multiple servers in one system , then we can easily operate many systems at a time.
+To reduce the cost and storage, this services are used.
+Hyper - V replica - replication of same OS to another severs.
+Dynamic memory
+Enhanced Windows Deployment services :
+Deploy OS with or without Active Directory
+within one hour time we can install OS by using WDS.
+Windows server core :
+To convert from core to GUI and vice versa.
+Network Access protection :
+To check the protection of system like Antivirus updates.
+Improved DHCp server :
+To Maintain the IP address for all computers 
+easy to switch by using the address to connect user desktop
+Improved Security :
+To deny the permission for unknown users to access the system or login into system
+Kerberos Version5
+Internet protocal security - PPTP , SSTP, IKEV2
+WSUS - Windows update server
+
+Requirements of lab practice :
+processor - I5 or I7
+Speed - 2GHz - Min - 1.4 GHz
+Processor should have Virtulization.
+Ram shoould be 8GB Ram
+Hard Disk - 100GB free space
+CMD - Systeminfo 
+
+Downloading Part :
+Windows Server 2012
+Windows server 2016 
+Windows Server 2010
+VMWare application
+Links for downloading :
+https://zoomgroup.com/mcse-linux-registration.asp
+https://www.microsoft.com/en-in/evalcenter/evaluate-windows-server-2012-r2
+ISO file
+name
+company name
+company size 5-9
+system administration
+windows server 2016
+vmware download
+https://www.vmware.com/in/products/workstation-pro/workstation-pro-evaluation.html
+VMWare
+Serial keys:
+ZF3R0-FHED2-M80TY-8QYGC-NPKYF
+YF390-0HF8P-M81RQ-2DXQE-M2UT6
+ZF71R-DMX85-08DQY-8YMNC-PPHV8
+AZ3E8-DCD8J-0842Z-N6NZE-XPKYF
+FC11K-00DE0-0800Z-04Z5E-MC8T6
+
+
+Class : 2
+
+Introduction to Computers :
+A computer is 	an electronic device which takes input through input devices and gives output throough output devices.
+
+History :
+
+Ist Gen - 1937 - 18000 Vacuum tubes weight 30tonnes
+2nd Gen - 1947 - Transistor
+3rd Gen - 1963 -Intel core Processor - mainframe servers.
+4th Gen - 1980 - Nano processor.
+
+It also stores the data
+computer works with 0's and 1's
+computer required DC current supply.
+Input unit - Data given to the Computer 
+CPU - Memory unit - ALU - control unit 
+output unit - gives the resutls 
+MotherBoard - it is brain of computer
+Processor - i3 or i5 ior AMD
+Primary storage devices like 
+RAM - Random access memory
+ROM - Read only memory
+Secondary Storage Devices : 
+HDD - Hard Disk Drive
+Optical Disk Drive ( CD ROM , DVD )
+Floppy Disk Drive
+SMPS - Switched Mode Power Supply
+Input Devices - Keyboard, Mouse
+Output Devices - Monitor
+
+Motherboard :
+it is main circuit board where all the physical components that are connected directly or indirectly.
+MBTX Motherboard should not work for 24hrs
+Server Motherboard - there will be many servers and ram in this , so we can run this anytime. it is expensive
+in Market we have 2 processor mother board and 4 processor motherboard. there is no overheating issues
+
+Processors :
+It is brain of computer.
+it is semi conductor device
+it contains CPU in single CHIP
+it performs arithmetic and logical unit
+Specifications : Hz changed to MHz to GHz
+Speed - width ( 64bits or 32bits )
+FSB Speed - Front side bus Speed - Tracks which are connected from Ram to Processor
+Gold colour lines in Motherboard are called Tracks 
+Cache Memory - chunks which are partitioned while processing the data by Memory unit .
+Virtualization
+Core Technology -
+Processor Manufacturers - AMD and Intel like i3 or i5 or i7
+RAM is divided in to Static Ram and Dynamic RAM
+Dynamic RAM :
+Primary Storage of computer
+it is volatile memory.
+Secondary storage devices :
+magnetic storage devices - hard disk , tape drive ( backup )
+optical storage devices - compact Disc , Digital verstaile disk (DVD ), Blu Ray Disk ( BRD )
+Flash Storage devices - pend drive, memory card, SSD - solid state drive
+
+Network 
+Network is interconnnection of devices
+Newtworking :
+it is communication between the interconnected devices
+
+Types of Network
+LAN - Land Area Network - Network connected within the branch
+MAN - Metropolitan area network - Network connected to two brances or two LAN's connected together to share the resources within City
+we need ISP to connect to MAN, ISP - Internet service protocal. we will have full time connectivity or part time.
+WAN - Wide area network - Network connected between two countries - we need Public internet line and it is expensive
+
+New LAN Network setup
+1.Systems - laptops, desktops, OS
+2.Media - Cables - Guided Media - physcial cables - cat5 or cat6 , unguided media - using wireless devices like wifi etc.
+3. Network Devices:
+NIC - Network interface card - it connects between network device and Ethernet, it is physical part connected to computer or laptop.
+MAC Address - Media access control address 
+it is aunique identifier assigned to network interface for communications on the physical network segment.
+HUB and Switch - these two are used to connect more than two PC's
+we need to tell how many ports required to connect computers like 4ports or 8 ports.
+To Transfer the data by using HUB or Swtich we need data packets. Data packets are of three types - Broadcast packet ( 1 to all ) - unicast packet ( 1 to 1 ) - multi cast packet ( 1 to group )
+HUB - it sends the data to different computers including the sender system so there will be collision issues.
+Switch - it send the data to different computers without sending it reverse to sender, it uses mac address while accepting the data packets
+Router - we can connect with two countries ( WAN ) . it uses multi cast data packet. so everyone can access to data. it can connect to many devices.
+4. Operating system
+5. IP Address
+
+Class : 3
+OS :
+OS is a program enables hardware to communicate and operate with the software.
+Types of OS - Non Windows - Unix , Linux - Windows OS 
+MS Dos is command based OS. it is categorized into Desktop OS ( Client OS ) and Network OS ( Server OS )
+Different versions released till now in Desktop OS
+win95,Win98,Win ME,Win2000Pro,Win XP,Win Vista ,Win7,Win8, Win 10. from Win95 to Win7 all are outdated.
+Different versions released in Server OS
+Win NT - 3.1 - 1993 , Win NT - 3.5 - 1994, Win NT - 4.0 - 1996, Win NT - 5.0 - Win 2000
+Win .Net Server - Win 2003 using .net server designed by Microsoft.
+Windows Server - 2008 - V .6.0 , Windows Server - 2012 - V.6.2 , Windows Server - 2016 - V.10.0
+Types of Hardware Servers :
+Tower Server - Small organizations - 25users 
+Rack Server - Big Organizations - more than 100 users named as Data center 
+Blade  Server - it is ccovered with Enclosure box - we can fix one hard disk per blade but can fix many servers.
+MS OS 2012 : 
+XP Home - XP applications - XP Professional , Win - Home  Win - Pro
+Real Life - we can create only 2 VmWare at a time
+In 2012 OS - we can create more than 2 Vm's
+Data center supports allows us to create unlimited VMwares
+Foundation Edition:
+available only for OEM
+License limited to 15 user accounts
+Essentials Edition:
+License limited to 25 users accounts
+standard Edition :
+Full windows server functionality with two virtual instances
+Data Center Edition :
+Full windows server functionality with unlimited virtual instances
+2016 OS :
+Essentials Edition - same as above
+Standard Edition - same as above
+Data center edition - same as above
+
+To run all these OS we require Hardware : same for 2012 OS and 2016 OS
+Processor : Min 1 processor with 1.4GHz ( 64bit )  Max : 64Processors
+Note : Hyper v Compatible Processor is recommended for Standard and Data center editions like Intel VT and AMD-V
+Memory - 512GB Ram , Max - 4TB Ram Available Disk space - 40 GB or Max - 80GB or greater ,  Drive - DVD ROM Drive/USB
+Installation will be done by using ISO file downloaded from Microsoft website
+
+How to go for BIOS : F2 or Delete or Ctrl+Delete , go on press F2 ,once the BIOS setup is displayed go to Boot option
+select the device which we want to use the OS like Pendrive - select removable devices , for DVD - select DVD Rom drive .
+To update the setting use + or - signs to apply the procedure. click to save the settings - F10 press enter.
+
+Class : 4
+Conversion of GUI to server core
+Step:1
+open - windows power shell
+uninstall-windowsfeature server-gui-mgmt-infra, server-gui-shell - restart
+Step:2
+server core to GUI  power shell Enter
+Install-windowsfeature server-gui-mgmt-infra, server-gui-shell - restart
+Commands will be executed in CMD - Command prompt
+additonal tool given by Microsoft - Power shell
+To go from CMD to shell , open CMD , type powershell , press enter
+
+Creating Local User accounts :
+Click Windows+R type LUSRMGR.MSC it will open the Local users window
+there will be two options - users and groups , folders in LUSR is called Containers
+Right click on Users - Enter Username - Full name - password
+Note : option "user must change password at next logon " should be ticked , so user can change once he or she gets new system , also if password reset done .
+Age of password is 42days , after that we need to change or if not changed then reset need to be done.
+if same password is to be used permanently then we need to tick option "password never expires"
+if the account needs to be disabled we need to tick " account is disabled" once we enter all the info click enter.
+
+Go to ControlPanel - search with Icon - click on add or remove icons it will display Desktop icon settings - tick Computer - users files - network recycle bin - control panel
+Password Reset : go to Run - LUSRMGR.MSC - right click on Sai , set password then new password will come.
+Account Deletion : go to Run - LUSRMGR.MSC - right click on Sai , delete then account will be removed permanently.
+
+IP Addressing :
+Internet protocal - IP
+if we have many networks that are connected with Switch and they have NIC cards and Mac address.
+we need to update the IP address to each and every computer. MAC address is physical address given for NIC card.
+IP address is logical address. Two addresses - IPV4 - 32Bit    IPV6 - 128Bit
+IANA - Internet assigned Network Authority
+smallest value for IP - 0.0.0.0 largest value is 255.255.255.255 - as per IANA - we have 4.3 Billion addressed
+they are divided in to 5 classes - A.B.C.D.E - ABC are used for LAN & WAN , Class D - Multi tasking - Class E - R & D
+there will be two portions - Network and Host portions - 10.0.0.0 first one is Network portion and last digit is Host position
+Class A is written as N.H.H.H - 10.0.0.0/8 N = 1 octet Class B - N.N.H.H - 10.0.0.0/16 Class C - N.N.N.H - 10.0.0.0/32
+there formats can be understanded by Subnet mask - 255.0.0.0 for class A , Class B - 255.255.0.0 Class C - 255.255.255.0
+There are two types of IP - Private and public , 
+Class A - Starts from o to 127 class b starts from 128 to 191 class c starts from 192 to 255
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MCSE
