@@ -1,0 +1,63 @@
+Task - 1
+----------
+1. Create a DynamoDB table and lambda using CloudFormation.
+2. Write the code to list all roles in the account.
+3. Write the code to put following details of the roles to DB.
+              -rolename
+              -rolearn  -- primary key
+              -role policy
+			  
+Task - 2
+--------
+1. Create a EventRule for Create Role and Create SNS Topic by giving subscription as your gmail using CloudFormation.
+2. Add Lambda as a Target for Create Role Event Rule. (you can use previousely created lambda)
+3. Write the code to put following details of the role that is created, take the role name from event.
+              -rolename
+              -rolearn  -- primary key
+              -role policy
+4. Send the mail using sns topic which is created through cft Send the Role Name.
+
+Task - 3
+--------
+1. Write the code to assume role to another account and to get object from other account.
+2. Create a Step Function using CloudFormation.
+3. Write the code to create a lambda resource in another account using assume role. Call the step function and once the lambda is triggered back describe the created stack and write the stack details into S3 of another account.
+
+Task - 4
+--------
+1. Create Lambda and DynamoDB from CFT and Write the code to list all the cloudformation stack of the account and store it to DynamoDB
+2. Enable DynamoDB Stream and add the trigger as lambda
+3. Manually Change the value in the DynamoDB and find out the exact value of the modified key by Describing Stack
+
+Task - 5
+--------
+1. Create DynamoDb with both Primary and Sort keys.  
+2. Create a Lambda. 
+3. Create S3 Bucket. All the above should be created using CFT, and should use intrinsic functions of CFT (Ref) to have the DynamoDB ,S3 and Particular Prefix of Bucket in Environment  Variable of lambda.
+4. Put the object to the particular prefix (Manually or through code). 
+5. Use S3 events(Create Event manually and then replicate the same via CFT) to get the notification to SNS(create sns also in same cft) and sns to lambda. 
+6. Once lambda receives event should check the file extension. 
+7. If it is JSON, get the file and put all key pairs into DynamoDb if json contains exact primary and sort keys.
+
+Task - 6
+--------
+1. Create one Simple HTML file with on Button
+2. Create one API Gateway and attach the lambda 
+3. Host the HTML file using S3 static website hosting
+4. On Click of the button it should show all the roles of the account
+
+Task - 7
+--------
+1. Create the below Resources using CFT
+   a) Lambda (set environment Variables during creation using cft which includes the resources created in the cft)
+   b) IAM Role
+   c) SQS with lambda Trigger
+   d) Cloud watch Event Rule for AttachRolePolicy and DeleteRolePolicy event with target as sqs
+   e) DynamoDB
+2) Enter few test Role Details in the Dynamodb( Ex: PrimaryKey : RoleName, SortKey : [List of policies]
+3) Now Remove the policies/ attach policies to one of the role
+
+Lambda Functionality :
+    a) Poll the messages from sqs , check for the Changes made to the role by comparing it with db details
+    b) Update the db with a key to indicate the change
+	c) Get the Role Policy and save it as a file in s3
