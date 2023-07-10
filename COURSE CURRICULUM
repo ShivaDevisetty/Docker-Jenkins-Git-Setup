@@ -1,0 +1,47 @@
+LINUX – AWS – DEVOPS COURSE CURRICULUM
+#Linux Contents –
+➢ Linux Overview
+➢ Working with directories
+➢ Working with files
+➢ Working with file contents 
+➢ Basics of shell scripting
+➢ Basic Unix tools
+➢ user management
+➢ File permissions
+#AWS CONTENTS –
+➢ Introduction to Cloud Computing 
+➢ Simple Storage Services (S3)
+➢ Elastic Compute Cloud (EC2)
+➢ ELB & Autoscaling 
+➢ Virtual Private Cloud
+➢ Relational Database Service (RDS) 
+➢ Identity Access Management (IAM)
+➢ Cloud Formation 
+➢ AWS Monitoring Services(Cloud watch and Cloud trail)
+➢ Application integration(SNS and SQS)
+➢ Elastic Beanstalk 
+➢ Route 53
+➢ Cloud Front
+➢ Migration
+➢ Redshift 
+➢ AWS Command line interface
+➢ AWS DevOps tools (Code Deploy and Code Pipeline)
+➢ Final Project – Setup a multi-tier application using all the AWS 
+Core services.
+#Devops Contents -
+➢ Introduction to DevOps
+➢ Vagrant 
+➢ Version Control with GIT 
+➢ Bit bucket/GITHUB
+➢ GIT, JENKINS and MAVEN Integration
+➢ Continuous Integration using Jenkins
+➢ Artifactory – Jfrog/Nexus
+➢ Code Quality Test - Sonarqube
+➢ Configuration Management with Ansible
+➢ Continuous Development: Containerization with Docker
+➢ Monitoring using Prometheus and Grafana 
+➢ Log monitoring with Splunk
+➢ Terraform
+➢ Kubernetes fundamentals
+➢ Final Project – Create a pipeline to continuously build, test and 
+deliver the executables to a target machine which is a container
