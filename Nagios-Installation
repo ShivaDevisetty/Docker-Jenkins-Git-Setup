@@ -1,0 +1,47 @@
+#Nagios-Installation
+
+Installing the prerequisites:
+sudo apt-get install wget build-essential apache2 php apache2-mod-php7.0 php-gd libgd-dev sendmail unzip
+or
+sudo apt install -y build-essential apache2 php openssl perl make php-gd libgd-dev libapache2-mod-php libperl-dev libssl-dev daemon wget apache2-utils unzip gcc glibc glibc-common gd gd-devel make net-snmp
+
+useradd nagios
+groupadd nagcmd
+usermod -G nagcmd nagios
+usermod -G nagcmd apache
+
+wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.6.tar.gz
+wget https://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz
+
+tar -xvf nagios-4.4.6.tar.gz
+tar -xvf nagios-plugins-2.3.3.tar.gz
+
+cd nagios-4.4.6
+./configure --with-nagios-group=nagios --with-command-group=nagcmd
+make all
+sudo make install
+sudo make install-commandmode
+sudo make install-init
+sudo make install-config
+make install-webconf
+htpasswd -s -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+
+service apache2 start 
+service apache2 restart
+
+cd nagios-plugins-2.3.3
+./configure --with-nagios-user=nagios --with-nagios-group=nagios
+make
+make install
+
+service nagios start   
+service nagios status
+
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+
+
+firewall-cmd --permanent --add-service=http
+firewall-cmd --reload
+
+http://Your-server-IP-address/nagios
+
